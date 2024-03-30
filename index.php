@@ -19,7 +19,7 @@
                     unset($_SESSION['message']);
                     }
                 ?>
-                <h1>Hello, world!</h1>
+                <h1>Hello, world! <i class="fa fa-user"></i> </h1>
                 <button class="btn btn-primary">Testing</button>
                 </div>
             </div>

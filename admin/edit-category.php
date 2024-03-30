@@ -1,6 +1,6 @@
 <?php 
-  include('includes/header.php') ;
   include('../middleware/adminMiddleware.php') ;
+  include('includes/header.php') ;
 ?>
 
     <div class="container">
@@ -18,7 +18,10 @@
                 ?>
                         <div class="card">
                     <div class="card-header">
-                        <h4>Sửa thể loại</h4>
+                        <h4>
+                            Sửa thể loại 
+                            <a href="category.php" class="btn btn-primary float-end">Quay Lại</a>
+                        </h4>
                     </div>
                     <div class="card-body">
                         <form action="code.php" method="POST" enctype="multipart/form-data">

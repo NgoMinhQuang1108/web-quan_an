@@ -10,7 +10,10 @@
           <a class="nav-link active" aria-current="page" href="index.php">Trang Chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Đặc Sắc</a>
+          <a class="nav-link" href="categories.php">Thực Đơn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">Giỏ Hàng</a>
         </li>
         <?php 
           if(isset($_SESSION['auth']))

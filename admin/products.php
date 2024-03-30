@@ -9,28 +9,33 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>
-                            Danh Mục
-                            <a href="add-category.php" class="btn btn-success float-end"><i class="fa-solid fa-plus p-1"></i>Thêm Danh Mục</a>
+                            Sản Phẩm
+                            <a href="add-product.php" class="btn btn-success float-end"><i class="fa-solid fa-plus p-1"></i>Thêm Sản Phẩm</a>
                         </h4>
+                        
                     </div>
-                    <div class="card-body" id="category_table">
+                    
+                    
+                    <div class="card-body" id="products_table">
                         <table class="table table-bordered table-striped">
-                            <thead>                            
+                            <thead>               
+                            
                                 <tr>
                                     <th>ID</th>
                                     <th>Tên</th>
                                     <th>Hình Ảnh</th>
                                     <th>Trạng Thái</th>
-                                    <th>Hoạt Động</th>
+                                    <th>Sửa</th>
+                                    <th>Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $category = getAll("categories");
+                                    $products = getAll("products");
 
-                                    if(mysqli_num_rows($category) > 0)
+                                    if(mysqli_num_rows($products) > 0)
                                     {
-                                        foreach($category as $item)
+                                        foreach($products as $item)
                                         {
                                             ?>
                                                  <tr>
@@ -43,12 +48,10 @@
                                                         <?= $item['status'] == '0' ? "Hiển thị": "Ẩn"; ?>
                                                     </td>                                                                                                    
                                                     <td>
-                                                        <a href="edit-category.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-primary">Sửa</a>
-                                                        <!-- <form action="code.php" method="POST">
-                                                            <input type="hidden" name="category_id" value="<?= $item['id']; ?>">
-                                                            <button type="submit" class="btn btn-danger" name="delete_category_btn">Xóa</button>
-                                                        </form> -->
-                                                        <button type="button" class="btn btn-sm btn-danger delete_category_btn" value="<?= $item['id']; ?>">Xóa</button>  
+                                                        <a href="edit-product.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-primary">Sửa</a>                                                     
+                                                    </td>
+                                                    <td>                                                       
+                                                            <button type="button" class="btn btn-sm btn-danger delete_product_btn" value="<?= $item['id']; ?>">Xóa</button>                                                 
                                                     </td>
                                                 </tr>
                                             <?php
@@ -56,7 +59,7 @@
                                     }
                                     else
                                     {
-                                        echo "Không Có Danh Mục";
+                                        echo "Không Có Sản Phẩm";
                                     }
                                 ?>
                                
